@@ -20,6 +20,6 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		print_r($this->put());
+		echo "Ci Product API";
 	}
 }
