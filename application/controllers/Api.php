@@ -245,7 +245,6 @@ class Api extends RestController
 			$this->response($return, $return['status']);
 		}
 
-
 		$params = [
 			"product_name" => $this->put('product_name'),
 			"product_description" => $this->put('product_description'),
@@ -284,8 +283,8 @@ class Api extends RestController
 	/**
 	 * Digunakan untuk menghapus data produk berdasarkan id
 	 * @param int $id
-	 * @return object
-	*/
+	 * @return response status
+	 */
 	public function products_delete()
 	{
 		$decodeData = $this->authtoken();
@@ -321,6 +320,12 @@ class Api extends RestController
 		$this->response($return, $return['status']);
 	}
 
+	/**
+	 * Digunakan untuk menambah stok atau inventory product
+	 * @param int $id
+	 * @param int $data
+	 * @return response status
+	 */
 	public function product_add_stock_put()
 	{
 		$decodeData = $this->authtoken();
@@ -383,6 +388,12 @@ class Api extends RestController
 		$this->response($return, $return['status']);
 	}
 
+	/**
+	 * Digunakan untuk mengurangi stok atau inventory product
+	 * @param int $id
+	 * @param int $data
+	 * @return response status
+	 */
 	public function product_decrease_stock_put()
 	{
 		$decodeData = $this->authtoken();
